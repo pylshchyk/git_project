@@ -19,6 +19,10 @@ input {
 button {
   display: inline;
 }
+a {
+  color: #856c8b;
+  font-size: 16px;
+}
 .row {
   max-width: 1048px;
 }
