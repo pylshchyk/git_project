@@ -1,0 +1,336 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("images/sky.jpg");
+}
+form {
+  display: inline;
+  width: auto;
+  height: auto;
+  margin-top: 10px;
+}
+label {
+  display: inline;
+}
+input {
+  display: inline;
+  border: 1px solid #856c8b;
+  height: 40px;
+}
+button {
+  display: inline;
+}
+.row {
+  max-width: 1048px;
+}
+.container {
+  background-color: rgba(212, 235, 208, 0.74);
+  display: block;
+  border: 2px solid #d4ebd0;
+  border-radius: 4px;
+  margin: 100px 100px 100px 100px;
+  padding: 10px;
+  padding-right: 0px;
+  width: 1300px;
+}
+.search {
+  display: block;
+  margin: 20px 15px 5px 0px;
+  padding: 20px 0px 20px 15px;
+  margin-right: 10px;
+}
+.search-icon {
+  display: inline;
+  font-size: 22px;
+  font-weight: 700;
+  position: relative;
+  color: #856c8b;
+  display: inline;
+  height: 40px;
+  width: 10px;
+}
+.vertical-line {
+  border-left: 4px solid #856c8b;
+  display: inline;
+}
+#current-day {
+  color: #607677;
+  display: inline;
+  width: 4%;
+  font-size: 22px;
+  height: 40px;
+  margin-left: 220px;
+  margin-right: 5px;
+}
+#current-hour {
+  color: #607677;
+  display: inline;
+  width: 4%;
+  font-size: 22px;
+  height: 40px;
+  margin-left: 15px;
+  padding-left: 15px;
+  padding-right: 1px;
+}
+#current-minutes {
+  color: #607677;
+  display: inline;
+  width: 4%;
+  font-size: 22px;
+  height: 40px;
+  padding-left: 1px;
+}
+#colon {
+  color: #607677;
+  display: inline;
+  width: 4%;
+  font-size: 22px;
+  height: 40px;
+  padding-left: 2px;
+  padding-right: 2px;
+  width: 10px;
+}
+#search-form {
+  width: 500px;
+  padding-right: 0px;
+}
+#search-icon {
+  width: 3%;
+}
+#search-engine {
+  border-radius: 16px;
+  font-size: 20px;
+  width: 75%;
+}
+#search-button {
+  margin-left: 5px;
+  border: 1px solid #d4ebd0;
+  border-radius: 8px;
+  color: whitesmoke;
+  background-color: #856c8b;
+  opacity: 0.85;
+  font-size: 20px;
+  font-weight: 300;
+  width: 100px;
+}
+#search-button:hover {
+  border: 1.5px solid #856c8b;
+  background-color: #d4ebd0;
+  color: #856c8b;
+  font-weight: 400;
+  opacity: 0.6;
+  transition: all 200ms ease;
+}
+#location-button {
+  border: 1px solid #d4ebd0;
+  border-radius: 8px;
+  color: whitesmoke;
+  background-color: #856c8b;
+  font-size: 20px;
+  font-weight: 300;
+  margin-left: 0px;
+  opacity: 0.85;
+  display: inline;
+  width: 100px;
+}
+#location-button:hover {
+  border: 1.5px solid #856c8b;
+  background-color: #d4ebd0;
+  color: #856c8b;
+  font-weight: 400;
+  opacity: 0.6;
+  transition: all 200ms ease;
+}
+#current-city {
+  color: #856c8b;
+  font-size: 40px;
+  margin-left: 20px;
+  padding-left: 30px;
+  padding-bottom: 10px;
+  font-weight: 600;
+}
+#current-temperature-block {
+  display: inline;
+  border: 2px solid #856c8b;
+  border-radius: 4px;
+  margin-left: 50px;
+  margin-right: 10px;
+  text-align: center;
+  font-size: 34px;
+  font-weight: 500;
+  padding: 50px 30px 40px 30px;
+  height: 300px;
+  background-image: url("images/sunny.jpg");
+  opacity: 0.9;
+}
+.current-weather-icon {
+  color: #f0c20b;
+}
+#current-temperature {
+  color: #f0c20b;
+}
+#celsius {
+  color: #f0c20b;
+}
+#celsius:hover {
+  color: #856c8b;
+  text-decoration: underlined;
+}
+#fahrenheit {
+  color: #d4ebd0;
+  border-left: 4px solid #d4ebd0;
+  padding-left: 10px;
+  cursor: pointer;
+}
+#fahrenheit:hover {
+  color: #856c8b;
+  border-left: 4px solid #856c8b;
+  text-decoration: underlined;
+  padding-left: 10px;
+}
+#current-state {
+  font-size: 30px;
+  color: #f0c20b;
+  margin-bottom: 7px;
+}
+#current-info-block {
+  padding-left: 4px;
+  display: inline;
+  margin-left: 20px;
+}
+#humidity-block {
+  color: #856c8b;
+  font-size: 20px;
+  font-weight: 400;
+  padding-left: 5px;
+  padding-right: 0px;
+  width: 187px;
+  margin-right: 5px;
+  text-align: left;
+  height: 20%;
+  padding-top: 10px;
+}
+#wind-block {
+  color: #856c8b;
+  font-size: 20px;
+  font-weight: 400;
+  padding-left: 5px;
+  padding-right: 0px;
+  width: 187px;
+  margin-right: 5px;
+  text-align: left;
+  height: 20%;
+  padding-top: 10px;
+}
+#feels-like-block {
+  color: #856c8b;
+  font-size: 20px;
+  font-weight: 400;
+  padding-left: 5px;
+  padding-right: 0px;
+  width: 187px;
+  text-align: left;
+  height: 20%;
+  padding-top: 10px;
+}
+#pressure-block {
+  color: #856c8b;
+  font-size: 20px;
+  font-weight: 400;
+  padding-left: 5px;
+  padding-right: 0px;
+  width: 200px;
+  text-align: left;
+  height: 20%;
+  padding-top: 10px;
+  margin-right: 2px;
+}
+#further-info-block {
+  margin-left: 30px;
+  margin-top: 20px;
+  height: 250px;
+  width: 1050px;
+}
+#further-day-one {
+  margin-left: 10px;
+  margin-top: 5px;
+  padding-left: 10px;
+  padding-top: 28px;
+  border: 3px solid #856c8b;
+  width: 247px;
+  height: 240px;
+  border-radius: 8px;
+  color: #856c8b;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  background-image: url(images/cloudy-sun.jpg);
+}
+#further-day-one-icon {
+  color: #856c8b;
+}
+#further-day-one-temperature {
+  color: #856c8b;
+  font-size: 32px;
+  margin-top: 20px;
+}
+#further-day-two {
+  border: 3px solid #856c8b;
+  width: 247px;
+  height: 240px;
+  margin-left: 15px;
+  margin-top: 5px;
+  padding-left: 10px;
+  padding-top: 28px;
+  font-size: 30px;
+  font-weight: 600;
+  color: #856c8b;
+  border-radius: 8px;
+  text-align: center;
+  background-image: url(images/cloudy-sun.jpg);
+}
+#further-day-two-icon {
+  color: #856c8b;
+}
+#further-day-two-temperature {
+  color: #856c8b;
+  font-size: 32px;
+  margin-top: 20px;
+}
+#further-day-three {
+  border: 3px solid #856c8b;
+  width: 247px;
+  height: 240px;
+  margin-left: 15px;
+  margin-top: 5px;
+  padding-left: 10px;
+  padding-top: 28px;
+  font-size: 30px;
+  font-weight: 600;
+  color: #856c8b;
+  border-radius: 8px;
+  text-align: center;
+  background-image: url(images/cloudy-sun.jpg);
+}
+#further-day-three-icon {
+  color: #856c8b;
+}
+#further-day-three-temperature {
+  color: #856c8b;
+  font-size: 32px;
+  margin-top: 20px;
+}
+#further-day-four {
+  border: 3px solid #856c8b;
+  width: 245px;
+  height: 240px;
+  margin-left: 15px;
+  margin-top: 5px;
+  padding-left: 10px;
+  padding-top: 28px;
+  font-size: 30px;
+  font-weight: 600;
+  color: #856c8b;
+  border-radius: 8px;
+  text-align: center;
+  background-image: url(images/cloudy-sun.jpg);
+}
