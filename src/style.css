@@ -168,9 +168,6 @@ a {
   background-image: url("images/sunny.jpg");
   opacity: 0.9;
 }
-.current-weather-icon {
-  color: #f0c20b;
-}
 #current-temperature {
   color: #f0c20b;
 }

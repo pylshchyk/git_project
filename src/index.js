@@ -19,6 +19,7 @@ if (currentMinutes < 10) {
 
 function displayCityWeather(response) {
   //searched city info block
+  console.log(response.data);
   let currentCityTemp = Math.round(response.data.main.temp);
   let currentCityTempDisplay = document.querySelector("#current-temperature");
   currentCityTempDisplay.innerHTML = currentCityTemp;
@@ -39,9 +40,15 @@ function displayCityWeather(response) {
   let currentCityPressureDisplay = document.querySelector("#pressure");
   currentCityPressureDisplay.innerHTML = currentCityPressure;
 
-  let currentCityState = response.data.weather[0].main;
+  let currentCityState = response.data.weather[0].description;
   let currentCityStateDisplay = document.querySelector("#current-state");
   currentCityStateDisplay.innerHTML = currentCityState;
+
+  let currentStateIcon = document.querySelector("#current-weather-icon");
+  currentStateIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   //end of the searched city info block
 
   //change block
@@ -110,9 +117,15 @@ function showDefault(response) {
   let currentWindDefaultDisplay = document.querySelector("#wind-speed");
   currentWindDefaultDisplay.innerHTML = currentWindDefault;
 
-  let currentStateDefault = response.data.weather[0].main;
+  let currentStateDefault = response.data.weather[0].description;
   let currentStateDefaultDisplay = document.querySelector("#current-state");
   currentStateDefaultDisplay.innerHTML = currentStateDefault;
+
+  let currentStateIcon = document.querySelector("#current-weather-icon");
+  currentStateIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   //end of the default info block
 
   //change.default block
@@ -188,6 +201,17 @@ function showGeolocationWeather(event) {
       let locationPressure = response.data.main.pressure;
       let locationPressureDisplay = document.querySelector("#pressure");
       locationPressureDisplay.innerHTML = locationPressure;
+
+      let locationCurrentState = response.data.weather[0].description;
+      let locationCurrentStateDisplay =
+        document.querySelector("#current-state");
+      locationCurrentStateDisplay.innerHTML = locationCurrentState;
+
+      let currentStateIcon = document.querySelector("#current-weather-icon");
+      currentStateIcon.setAttribute(
+        "src",
+        `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      );
 
       //change button block
       function changeToFahrenheit() {
