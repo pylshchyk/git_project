@@ -241,3 +241,48 @@ function showGeolocationWeather(event) {
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", showGeolocationWeather);
 //end of the current location block
+
+//forecast block
+function showforecastDayOneName() {
+  let forecastDayOneName = document.querySelector("#further-day-one-name");
+  if (currentDate.getDay() === 6) {
+    forecastDayOneName.innerHTML = days[currentDate.getDay() - 6];
+  } else {
+    forecastDayOneName.innerHTML = days[currentDate.getDay() + 1];
+  }
+}
+
+showforecastDayOneName();
+function showforecastDayTwoName() {
+  let forecastDayTwoName = document.querySelector("#further-day-two-name");
+  if (currentDate.getDay() >= 5) {
+    forecastDayTwoName.innerHTML = days[currentDate.getDay() - 5];
+  } else {
+    forecastDayTwoName.innerHTML = days[currentDate.getDay() + 2];
+  }
+}
+showforecastDayTwoName();
+
+function showforecastDayThreeName() {
+  let forecastDayThreeName = document.querySelector("#further-day-three-name");
+  if (currentDate.getDay() >= 4) {
+    forecastDayThreeName.innerHTML = days[currentDate.getDay() - 4];
+  } else {
+    forecastDayThreeName.innerHTML = days[currentDate.getDay() + 3];
+  }
+}
+showforecastDayThreeName();
+
+function showforecastDayFourName() {
+  let forecastDayFourName = document.querySelector("#further-day-four-name");
+  if (currentDate.getDay() >= 3) {
+    forecastDayFourName.innerHTML = days[currentDate.getDay() - 3];
+  } else {
+    forecastDayFourName.innerHTML = days[currentDate.getDay() + 4];
+  }
+}
+showforecastDayFourName();
+
+function getForecastCoordinates(coordinates) {
+  let apiKey = "d0eed7ffdd3d238cb719b960f1d2635b";
+}
