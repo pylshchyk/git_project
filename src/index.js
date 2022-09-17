@@ -19,7 +19,6 @@ if (currentMinutes < 10) {
 
 function displayCityWeather(response) {
   //searched city info block
-  console.log(response.data);
   let currentCityTemp = Math.round(response.data.main.temp);
   let currentCityTempDisplay = document.querySelector("#current-temperature");
   currentCityTempDisplay.innerHTML = currentCityTemp;
@@ -50,6 +49,44 @@ function displayCityWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   //end of the searched city info block
+
+  //forecast block
+
+  function getForecastCoordinates(coordinates) {
+    let apiKey = "b40b135798f82a05aed08769f9275f50";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+
+    function showForecast(response) {
+      let forecastDay1Temp = Math.round(response.data.list[4].main.temp);
+      let forecastDay1TempDisplay = document.querySelector(
+        "#forecast-day-one-temp"
+      );
+      forecastDay1TempDisplay.innerHTML = forecastDay1Temp;
+
+      let forecastDay2Temp = Math.round(response.data.list[12].main.temp);
+      let forecastDay2TempDisplay = document.querySelector(
+        "#forecast-day-two-temp"
+      );
+      forecastDay2TempDisplay.innerHTML = forecastDay2Temp;
+
+      let forecastDay3Temp = Math.round(response.data.list[20].main.temp);
+      let forecastDay3TempDisplay = document.querySelector(
+        "#forecast-day-three-temp"
+      );
+      forecastDay3TempDisplay.innerHTML = forecastDay3Temp;
+
+      let forecastDay4Temp = Math.round(response.data.list[28].main.temp);
+      let forecastDay4TempDisplay = document.querySelector(
+        "#forecast-day-four-temp"
+      );
+      forecastDay4TempDisplay.innerHTML = forecastDay4Temp;
+    }
+
+    axios.get(apiUrl).then(showForecast);
+  }
+
+  getForecastCoordinates(response.data.coord);
+  //end of the forecast block
 
   //change block
   function changeToFahrenheit() {
@@ -282,7 +319,3 @@ function showforecastDayFourName() {
   }
 }
 showforecastDayFourName();
-
-function getForecastCoordinates(coordinates) {
-  let apiKey = "d0eed7ffdd3d238cb719b960f1d2635b";
-}
