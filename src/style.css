@@ -36,7 +36,7 @@ a {
   margin: 100px 100px 100px 100px;
   padding: 10px;
   padding-right: 0px;
-  width: 1300px;
+  width: 80%;
 }
 .search {
   display: block;
@@ -96,7 +96,7 @@ a {
   width: 10px;
 }
 #search-form {
-  width: 500px;
+  width: 50%;
   padding-right: 0px;
 }
 #search-icon {
@@ -259,7 +259,7 @@ a {
   padding-left: 10px;
   padding-top: 28px;
   border: 3px solid #856c8b;
-  width: 247px;
+  width: 23%;
   height: 240px;
   border-radius: 8px;
   color: #856c8b;
@@ -278,7 +278,7 @@ a {
 }
 #further-day-two {
   border: 3px solid #856c8b;
-  width: 247px;
+  width: 23%;
   height: 240px;
   margin-left: 15px;
   margin-top: 5px;
@@ -301,7 +301,7 @@ a {
 }
 #further-day-three {
   border: 3px solid #856c8b;
-  width: 247px;
+  width: 23%;
   height: 240px;
   margin-left: 15px;
   margin-top: 5px;
@@ -324,7 +324,7 @@ a {
 }
 #further-day-four {
   border: 3px solid #856c8b;
-  width: 245px;
+  width: 23%;
   height: 240px;
   margin-left: 15px;
   margin-top: 5px;
