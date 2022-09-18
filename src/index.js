@@ -63,11 +63,28 @@ function displayCityWeather(response) {
       );
       forecastDay1TempDisplay.innerHTML = `${forecastDay1Temp} °C`;
 
+      let forecastDayOneIcon = document.querySelector(
+        "#further-day-one-icon-display"
+      );
+      forecastDayOneIcon.setAttribute(
+        "src",
+        `http://openweathermap.org/img/wn/${response.data.list[4].weather[0].icon}@2x.png`
+      );
+      console.log(response.data);
+
       let forecastDay2Temp = Math.round(response.data.list[12].main.temp);
       let forecastDay2TempDisplay = document.querySelector(
         "#forecast-day-two-temp"
       );
       forecastDay2TempDisplay.innerHTML = `${forecastDay2Temp} °C`;
+
+      let forecastDayTwoIcon = document.querySelector(
+        "#further-day-two-icon-display"
+      );
+      forecastDayTwoIcon.setAttribute(
+        "src",
+        `http://openweathermap.org/img/wn/${response.data.list[12].weather[0].icon}@2x.png`
+      );
 
       let forecastDay3Temp = Math.round(response.data.list[20].main.temp);
       let forecastDay3TempDisplay = document.querySelector(
@@ -75,11 +92,27 @@ function displayCityWeather(response) {
       );
       forecastDay3TempDisplay.innerHTML = `${forecastDay3Temp} °C`;
 
+      let forecastDayThreeIcon = document.querySelector(
+        "#further-day-three-icon-display"
+      );
+      forecastDayThreeIcon.setAttribute(
+        "src",
+        `http://openweathermap.org/img/wn/${response.data.list[20].weather[0].icon}@2x.png`
+      );
+
       let forecastDay4Temp = Math.round(response.data.list[28].main.temp);
       let forecastDay4TempDisplay = document.querySelector(
         "#forecast-day-four-temp"
       );
       forecastDay4TempDisplay.innerHTML = `${forecastDay4Temp} °C`;
+
+      let forecastDayFourIcon = document.querySelector(
+        "#further-day-four-icon-display"
+      );
+      forecastDayFourIcon.setAttribute(
+        "src",
+        `http://openweathermap.org/img/wn/${response.data.list[28].weather[0].icon}@2x.png`
+      );
 
       function changeToFahrenheit() {
         forecastDay1TempDisplay.innerHTML = `${Math.round(
@@ -166,13 +199,19 @@ function showDefault(response) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${response.data.coord.lat}&lon=${response.data.coord.lon}&appid=${apiKey}&units=metric`;
 
   function showDefaultForecast(response) {
-    console.log(response.data);
-
     let forecastDay1Temp = Math.round(response.data.list[4].main.temp);
     let forecastDay1TempDisplay = document.querySelector(
       "#forecast-day-one-temp"
     );
     forecastDay1TempDisplay.innerHTML = `${forecastDay1Temp} °C`;
+
+    let forecastDayOneIcon = document.querySelector(
+      "#further-day-one-icon-display"
+    );
+    forecastDayOneIcon.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.list[4].weather[0].icon}@2x.png`
+    );
 
     let forecastDay2Temp = Math.round(response.data.list[12].main.temp);
     let forecastDay2TempDisplay = document.querySelector(
@@ -180,17 +219,41 @@ function showDefault(response) {
     );
     forecastDay2TempDisplay.innerHTML = `${forecastDay2Temp} °C`;
 
+    let forecastDayTwoIcon = document.querySelector(
+      "#further-day-two-icon-display"
+    );
+    forecastDayTwoIcon.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.list[12].weather[0].icon}@2x.png`
+    );
+
     let forecastDay3Temp = Math.round(response.data.list[20].main.temp);
     let forecastDay3TempDisplay = document.querySelector(
       "#forecast-day-three-temp"
     );
     forecastDay3TempDisplay.innerHTML = `${forecastDay3Temp} °C`;
 
+    let forecastDayThreeIcon = document.querySelector(
+      "#further-day-three-icon-display"
+    );
+    forecastDayThreeIcon.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.list[20].weather[0].icon}@2x.png`
+    );
+
     let forecastDay4Temp = Math.round(response.data.list[28].main.temp);
     let forecastDay4TempDisplay = document.querySelector(
       "#forecast-day-four-temp"
     );
     forecastDay4TempDisplay.innerHTML = `${forecastDay4Temp} °C`;
+
+    let forecastDayFourIcon = document.querySelector(
+      "#further-day-four-icon-display"
+    );
+    forecastDayFourIcon.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.list[28].weather[0].icon}@2x.png`
+    );
 
     function changeToFahrenheit() {
       forecastDay1TempDisplay.innerHTML = `${Math.round(
@@ -305,6 +368,7 @@ function showGeolocationWeather(event) {
 
     let apiKey = "d0eed7ffdd3d238cb719b960f1d2635b";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${currentLat}&lon=${currentLon}&appid=${apiKey}&&units=metric`;
+    let apiUrl1 = `https://api.openweathermap.org/data/2.5/forecast?lat=${currentLat}&lon=${currentLon}&appid=${apiKey}&units=metric`;
 
     function displayGeolocationWeather(response) {
       let locationName = response.data.name;
@@ -362,7 +426,97 @@ function showGeolocationWeather(event) {
       //end of the change button block
     }
 
+    function showForecast(response) {
+      console.log(response.data);
+
+      let forecastDay1Temp = Math.round(response.data.list[4].main.temp);
+      let forecastDay1TempDisplay = document.querySelector(
+        "#forecast-day-one-temp"
+      );
+      forecastDay1TempDisplay.innerHTML = `${forecastDay1Temp} °C`;
+
+      let forecastDayOneIcon = document.querySelector(
+        "#further-day-one-icon-display"
+      );
+      forecastDayOneIcon.setAttribute(
+        "src",
+        `http://openweathermap.org/img/wn/${response.data.list[4].weather[0].icon}@2x.png`
+      );
+
+      let forecastDay2Temp = Math.round(response.data.list[12].main.temp);
+      let forecastDay2TempDisplay = document.querySelector(
+        "#forecast-day-two-temp"
+      );
+      forecastDay2TempDisplay.innerHTML = `${forecastDay2Temp} °C`;
+
+      let forecastDayTwoIcon = document.querySelector(
+        "#further-day-two-icon-display"
+      );
+      forecastDayTwoIcon.setAttribute(
+        "src",
+        `http://openweathermap.org/img/wn/${response.data.list[12].weather[0].icon}@2x.png`
+      );
+
+      let forecastDay3Temp = Math.round(response.data.list[20].main.temp);
+      let forecastDay3TempDisplay = document.querySelector(
+        "#forecast-day-three-temp"
+      );
+      forecastDay3TempDisplay.innerHTML = `${forecastDay3Temp} °C`;
+
+      let forecastDayThreeIcon = document.querySelector(
+        "#further-day-three-icon-display"
+      );
+      forecastDayThreeIcon.setAttribute(
+        "src",
+        `http://openweathermap.org/img/wn/${response.data.list[20].weather[0].icon}@2x.png`
+      );
+
+      let forecastDay4Temp = Math.round(response.data.list[28].main.temp);
+      let forecastDay4TempDisplay = document.querySelector(
+        "#forecast-day-four-temp"
+      );
+      forecastDay4TempDisplay.innerHTML = `${forecastDay4Temp} °C`;
+
+      let forecastDayFourIcon = document.querySelector(
+        "#further-day-four-icon-display"
+      );
+      forecastDayFourIcon.setAttribute(
+        "src",
+        `http://openweathermap.org/img/wn/${response.data.list[28].weather[0].icon}@2x.png`
+      );
+
+      function changeToFahrenheit() {
+        forecastDay1TempDisplay.innerHTML = `${Math.round(
+          forecastDay1Temp * 1.8 + 32
+        )} °F`;
+
+        forecastDay2TempDisplay.innerHTML = `${Math.round(
+          forecastDay2Temp * 1.8 + 32
+        )} °F`;
+
+        forecastDay3TempDisplay.innerHTML = `${Math.round(
+          forecastDay3Temp * 1.8 + 32
+        )} °F`;
+
+        forecastDay4TempDisplay.innerHTML = `${Math.round(
+          forecastDay4Temp * 1.8 + 32
+        )} °F`;
+      }
+      let fahrenheitChange = document.querySelector("#fahrenheit");
+      fahrenheitChange.addEventListener("click", changeToFahrenheit);
+
+      function changeToCelsius() {
+        forecastDay1TempDisplay.innerHTML = `${forecastDay1Temp} °C`;
+        forecastDay2TempDisplay.innerHTML = `${forecastDay2Temp} °C`;
+        forecastDay3TempDisplay.innerHTML = `${forecastDay3Temp} °C`;
+        forecastDay4TempDisplay.innerHTML = `${forecastDay4Temp} °C`;
+      }
+      let celsiusChange = document.querySelector("#celsius");
+      celsiusChange.addEventListener("click", changeToCelsius);
+    }
+
     axios.get(apiUrl).then(displayGeolocationWeather);
+    axios.get(apiUrl1).then(showForecast);
   }
   navigator.geolocation.getCurrentPosition(logPosition);
 }
@@ -371,7 +525,7 @@ let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", showGeolocationWeather);
 //end of the current location block
 
-//forecast block
+//forecast day names block
 function showforecastDayOneName() {
   let forecastDayOneName = document.querySelector("#further-day-one-name");
   if (currentDate.getDay() === 6) {

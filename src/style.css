@@ -269,12 +269,12 @@ a {
   background-image: url(images/cloudy-sun.jpg);
 }
 #further-day-one-icon {
-  color: #856c8b;
+  margin: 0px;
 }
 #further-day-one-temperature {
   color: #856c8b;
   font-size: 32px;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 #further-day-two {
   border: 3px solid #856c8b;
@@ -297,7 +297,7 @@ a {
 #further-day-two-temperature {
   color: #856c8b;
   font-size: 32px;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 #further-day-three {
   border: 3px solid #856c8b;
@@ -320,7 +320,7 @@ a {
 #further-day-three-temperature {
   color: #856c8b;
   font-size: 32px;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 #further-day-four {
   border: 3px solid #856c8b;
