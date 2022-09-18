@@ -61,25 +61,54 @@ function displayCityWeather(response) {
       let forecastDay1TempDisplay = document.querySelector(
         "#forecast-day-one-temp"
       );
-      forecastDay1TempDisplay.innerHTML = forecastDay1Temp;
+      forecastDay1TempDisplay.innerHTML = `${forecastDay1Temp} °C`;
 
       let forecastDay2Temp = Math.round(response.data.list[12].main.temp);
       let forecastDay2TempDisplay = document.querySelector(
         "#forecast-day-two-temp"
       );
-      forecastDay2TempDisplay.innerHTML = forecastDay2Temp;
+      forecastDay2TempDisplay.innerHTML = `${forecastDay2Temp} °C`;
 
       let forecastDay3Temp = Math.round(response.data.list[20].main.temp);
       let forecastDay3TempDisplay = document.querySelector(
         "#forecast-day-three-temp"
       );
-      forecastDay3TempDisplay.innerHTML = forecastDay3Temp;
+      forecastDay3TempDisplay.innerHTML = `${forecastDay3Temp} °C`;
 
       let forecastDay4Temp = Math.round(response.data.list[28].main.temp);
       let forecastDay4TempDisplay = document.querySelector(
         "#forecast-day-four-temp"
       );
-      forecastDay4TempDisplay.innerHTML = forecastDay4Temp;
+      forecastDay4TempDisplay.innerHTML = `${forecastDay4Temp} °C`;
+
+      function changeToFahrenheit() {
+        forecastDay1TempDisplay.innerHTML = `${Math.round(
+          forecastDay1Temp * 1.8 + 32
+        )} °F`;
+
+        forecastDay2TempDisplay.innerHTML = `${Math.round(
+          forecastDay2Temp * 1.8 + 32
+        )} °F`;
+
+        forecastDay3TempDisplay.innerHTML = `${Math.round(
+          forecastDay3Temp * 1.8 + 32
+        )} °F`;
+
+        forecastDay4TempDisplay.innerHTML = `${Math.round(
+          forecastDay4Temp * 1.8 + 32
+        )} °F`;
+      }
+      let fahrenheitChange = document.querySelector("#fahrenheit");
+      fahrenheitChange.addEventListener("click", changeToFahrenheit);
+
+      function changeToCelsius() {
+        forecastDay1TempDisplay.innerHTML = `${forecastDay1Temp} °C`;
+        forecastDay2TempDisplay.innerHTML = `${forecastDay2Temp} °C`;
+        forecastDay3TempDisplay.innerHTML = `${forecastDay3Temp} °C`;
+        forecastDay4TempDisplay.innerHTML = `${forecastDay4Temp} °C`;
+      }
+      let celsiusChange = document.querySelector("#celsius");
+      celsiusChange.addEventListener("click", changeToCelsius);
     }
 
     axios.get(apiUrl).then(showForecast);
@@ -132,6 +161,69 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Kyiv&appid=${api
 
 function showDefault(response) {
   //default info block
+
+  let apiKey = "d0eed7ffdd3d238cb719b960f1d2635b";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${response.data.coord.lat}&lon=${response.data.coord.lon}&appid=${apiKey}&units=metric`;
+
+  function showDefaultForecast(response) {
+    console.log(response.data);
+
+    let forecastDay1Temp = Math.round(response.data.list[4].main.temp);
+    let forecastDay1TempDisplay = document.querySelector(
+      "#forecast-day-one-temp"
+    );
+    forecastDay1TempDisplay.innerHTML = `${forecastDay1Temp} °C`;
+
+    let forecastDay2Temp = Math.round(response.data.list[12].main.temp);
+    let forecastDay2TempDisplay = document.querySelector(
+      "#forecast-day-two-temp"
+    );
+    forecastDay2TempDisplay.innerHTML = `${forecastDay2Temp} °C`;
+
+    let forecastDay3Temp = Math.round(response.data.list[20].main.temp);
+    let forecastDay3TempDisplay = document.querySelector(
+      "#forecast-day-three-temp"
+    );
+    forecastDay3TempDisplay.innerHTML = `${forecastDay3Temp} °C`;
+
+    let forecastDay4Temp = Math.round(response.data.list[28].main.temp);
+    let forecastDay4TempDisplay = document.querySelector(
+      "#forecast-day-four-temp"
+    );
+    forecastDay4TempDisplay.innerHTML = `${forecastDay4Temp} °C`;
+
+    function changeToFahrenheit() {
+      forecastDay1TempDisplay.innerHTML = `${Math.round(
+        forecastDay1Temp * 1.8 + 32
+      )} °F`;
+
+      forecastDay2TempDisplay.innerHTML = `${Math.round(
+        forecastDay2Temp * 1.8 + 32
+      )} °F`;
+
+      forecastDay3TempDisplay.innerHTML = `${Math.round(
+        forecastDay3Temp * 1.8 + 32
+      )} °F`;
+
+      forecastDay4TempDisplay.innerHTML = `${Math.round(
+        forecastDay4Temp * 1.8 + 32
+      )} °F`;
+    }
+    let fahrenheitChange = document.querySelector("#fahrenheit");
+    fahrenheitChange.addEventListener("click", changeToFahrenheit);
+
+    function changeToCelsius() {
+      forecastDay1TempDisplay.innerHTML = `${forecastDay1Temp} °C`;
+      forecastDay2TempDisplay.innerHTML = `${forecastDay2Temp} °C`;
+      forecastDay3TempDisplay.innerHTML = `${forecastDay3Temp} °C`;
+      forecastDay4TempDisplay.innerHTML = `${forecastDay4Temp} °C`;
+    }
+    let celsiusChange = document.querySelector("#celsius");
+    celsiusChange.addEventListener("click", changeToCelsius);
+  }
+
+  axios.get(apiUrl).then(showDefaultForecast);
+
   let currentTempDefault = Math.round(response.data.main.temp);
   let currentTempDefaultDisplay = document.querySelector(
     "#current-temperature"
